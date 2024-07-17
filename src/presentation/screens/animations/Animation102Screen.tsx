@@ -13,7 +13,8 @@ export const Animation102Screen = () => {
                 dx: pan.x, // x,y are Animated.Value
                 dy: pan.y,
             },
-        ]),
+        ], { useNativeDriver: false }
+    ),
         onPanResponderRelease: () => {
             Animated.spring(
                 pan, // Auto-multiplexed
