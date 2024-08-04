@@ -19,7 +19,8 @@ export const Button = ({ text, styes, icon, onPress }: Props) => {
                 {
                     opacity: pressed ? 0.8 : 1,
                     backgroundColor: colors.primary,
-                }
+                },
+                styes
             ])}
         >
             <Text style={[globalStyles.btnPrimaryText,
