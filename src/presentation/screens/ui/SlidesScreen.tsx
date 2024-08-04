@@ -8,10 +8,11 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
-import {colors, globalStyles} from '../../../config/theme/theme';
 import {Button} from '../../components/ui/Button';
-import {useRef, useState} from 'react';
+import {useContext, useRef, useState} from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { ThemeContext } from '../../context/ThemeContext';
+import { globalStyles } from '../../../config/theme/theme';
 
 interface Slide {
   title: string;
@@ -57,9 +58,12 @@ export const SlidesScreen = () => {
     });
   };
 
+  const { colors } = useContext(ThemeContext);
+
   return (
     <View style={{flex: 1, backgroundColor: colors.background}}>
       <FlatList
+        style={{backgroundColor: colors.background}}
         ref={flatListRef}
         data={items}
         keyExtractor={item => item.title}
@@ -105,12 +109,13 @@ interface SlideItemProps {
 
 const SlideItem = ({item}: SlideItemProps) => {
   const {width} = useWindowDimensions();
+  const { colors } = useContext(ThemeContext);
 
   return (
     <View
       style={{
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: colors.cardBackground,
         borderRadius: 5,
         padding: 40,
         justifyContent: 'center',

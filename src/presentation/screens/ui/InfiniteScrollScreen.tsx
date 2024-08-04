@@ -1,11 +1,9 @@
 
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { ActivityIndicator, Image, Text, View } from "react-native"
-import { CustomView } from "../../components/ui/CustomView"
-import { Title } from "../../components/ui/Titulo"
 import { FlatList } from "react-native-gesture-handler"
-import { colors } from "../../../config/theme/theme"
 import { FadeInImage } from "../../components/ui/FadeInImage"
+import { ThemeContext } from "../../context/ThemeContext"
 
 export const InfiniteScrollScreen = () => {
 
@@ -18,6 +16,8 @@ export const InfiniteScrollScreen = () => {
         }, 1500)
     }
 
+
+    const { colors } = useContext(ThemeContext);
 
     return (
         <View style={{backgroundColor:'black'}}>

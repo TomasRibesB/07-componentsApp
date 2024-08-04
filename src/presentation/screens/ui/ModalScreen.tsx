@@ -3,12 +3,13 @@ import { Modal, Platform, Text, View } from "react-native"
 import { CustomView } from "../../components/ui/CustomView"
 import { Title } from "../../components/ui/Titulo"
 import { Button } from "../../components/ui/Button"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { ThemeContext } from "../../context/ThemeContext"
 
 export const ModalScreen = () => {
 
     const [isVisible, setisVisible] = useState(false)
-
+    const { colors } = useContext(ThemeContext);
     return (
         <CustomView margin>
             <Title text="Modal Screen" />
@@ -22,7 +23,7 @@ export const ModalScreen = () => {
                 <View
                 style={{
                     flex: 1,
-                    backgroundColor: 'rgba(0,0,0,0.1)',
+                    backgroundColor: colors.background,
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}
