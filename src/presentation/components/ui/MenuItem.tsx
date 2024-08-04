@@ -37,7 +37,7 @@ export const MenuItem = ({ name, icon, component, isFirst, isLast }: Props) => {
                     }}
                 >
                     <Icon name={icon} size={30} color={colors.primary} />
-                    <Text style={{ color: colors.text }}>{name}</Text>
+                    <Text style={{ color: colors.text, marginLeft: 5 }}>{name}</Text>
                     <Icon name='chevron-forward-outline' size={30} style={{ marginLeft: 'auto', color: colors.primary }} />
 
                 </View>
