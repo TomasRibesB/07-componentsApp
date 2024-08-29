@@ -1,4 +1,4 @@
-package com.componentsapp
+package com.tomasribes.rncomponentsapp
 
 import android.os.Bundle;
 
